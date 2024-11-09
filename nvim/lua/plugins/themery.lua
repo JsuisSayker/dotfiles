@@ -1,4 +1,4 @@
 return {
-    "zaldih/themery.nvim",
-    lazy = false
+	"zaldih/themery.nvim",
+	lazy = false,
 }
