@@ -4,5 +4,3 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.keymap.set('n', '<Space>', '<Nop>')
 vim.g.mapleader = " "
-
-
