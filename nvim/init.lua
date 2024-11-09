@@ -11,10 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-
-local opts = {}
-
 require("vim-settings")
 require("epiheaders")
 require("lazy").setup("plugins")
