@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="log-max-size-enabled" type="bool" value="true"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value=""/>
+      <value type="string" value="blueman"/>
+      <value type="string" value="com.discordapp.Discord"/>
+      <value type="string" value="org.freedesktop.network-manager-applet"/>
+      <value type="string" value="org.freedesktop.problems.applet"/>
+      <value type="string" value="org.gnome.baobab"/>
+      <value type="string" value="org.gnome.Rhythmbox3"/>
+      <value type="string" value="org.xfce.Thunar"/>
+      <value type="string" value="seapplet"/>
+      <value type="string" value="teams-for-linux"/>
+      <value type="string" value="vivaldi-stable"/>
+      <value type="string" value="Xfce volume control"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
+      <value type="string" value="xfce4-power-manager"/>
+      <value type="string" value="xfce4-settings-helper"/>
+    </property>
+  </property>
+  <property name="primary-monitor" type="uint" value="1"/>
+  <property name="notify-location" type="uint" value="3"/>
+  <property name="date-time-format" type="int" value="0"/>
+  <property name="date-time-custom-format" type="string" value="%a %H:%M:%S"/>
+  <property name="log-level" type="uint" value="0"/>
+  <property name="log-level-apps" type="uint" value="0"/>
+  <property name="gauge-ignores-dnd" type="bool" value="false"/>
+  <property name="do-fadeout" type="bool" value="false"/>
+  <property name="initial-opacity" type="double" value="0.91000000000000003"/>
+  <property name="expire-timeout" type="int" value="2"/>
+  <property name="expire-timeout-allow-override" type="bool" value="false"/>
+  <property name="theme" type="string" value="Qogir"/>
+</channel>
