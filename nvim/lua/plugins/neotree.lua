@@ -1,22 +1,33 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim",
-    },
-    config = function()
-        vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", {})
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
+	config = function()
+		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", {})
 
-        vim.api.nvim_create_autocmd("BufEnter", {
-            pattern = "*",
-            callback = function()
-                local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-                if buftype == "" and #vim.api.nvim_list_wins() > 1 then
-                    vim.cmd("Neotree close")
-                end
-            end,
-        })
-    end,
+		-- Neo-tree configuration
+		require("neo-tree").setup({
+			filesystem = {
+				filtered_items = {
+					visible = true, -- Always show hidden files
+					hide_dotfiles = false, -- Do not hide dotfiles
+					hide_gitignored = false, -- Do not hide gitignored files
+				},
+			},
+		})
+
+		vim.api.nvim_create_autocmd("BufEnter", {
+			pattern = "*",
+			callback = function()
+				local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+				if buftype == "" and #vim.api.nvim_list_wins() > 1 then
+					vim.cmd("Neotree close")
+				end
+			end,
+		})
+	end,
 }
