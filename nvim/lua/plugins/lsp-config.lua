@@ -107,16 +107,25 @@ return {
 			automatic_installation = true,
 		})
 
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				require("lspconfig")[server_name].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-					settings = servers[server_name],
-					filetypes = (servers[server_name] or {}).filetypes,
-				})
-			end,
-		})
+		for server_name, server_config in pairs(servers) do
+			vim.lsp.config(server_name, {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = server_config,
+				filetypes = server_config.filetypes,
+			})
+		end
+
+		--mason_lspconfig.setup_handlers({
+		--	function(server_name)
+		--		require("lspconfig")[server_name].setup({
+		--			capabilities = capabilities,
+		--			on_attach = on_attach,
+		--			settings = servers[server_name],
+		--			filetypes = (servers[server_name] or {}).filetypes,
+		--		})
+		--	end,
+		--})
 		require("mason-nvim-lint").setup()
 		require("mason-conform").setup()
 	end,
